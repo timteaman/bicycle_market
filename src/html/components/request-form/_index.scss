@@ -1,0 +1,54 @@
+@use '../../../styles/mixins/' as*;
+
+.request-form {
+  color: var(--c-white);
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  &__body {
+    margin-bottom: 30px;
+  }
+
+  &__group {
+    margin-bottom: 24px;
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 14px;
+    padding: 18px;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    color: var(--c-white);
+    outline: 0;
+    transition: border-color 0.3s ease-in-out;
+
+    &:focus {
+      border-color: var(--c-pink);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      @include mask-contain;
+      mask-image: var(--icon-check);
+      background-color: #1BCB42;
+    }
+  }
+}

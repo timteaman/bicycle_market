@@ -1,0 +1,16 @@
+@use './hero/hero';
+@use './about/about';
+@use './rental/rental';
+@use './why/why';
+@use './feedback/feedback';
+
+.home-page {
+
+  .header {
+    background-color: transparent;
+
+    &.scrolled {
+      background-color: var(--c-dark);
+    }
+  }
+}

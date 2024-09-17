@@ -1,0 +1,35 @@
+@use '../../../../styles/mixins/' as*;
+
+.request-bike {
+  padding-block: 100px 120px;
+  background-image: url('/src/assets/images/services/black-bicycle.webp');
+  background-repeat: no-repeat;
+  background-size: auto 660px;
+  background-position: right center;
+
+  .form-wrapper {
+    max-width: 450px;
+    padding: 50px 40px;
+
+    @include rmax($xs) {
+      padding: 5px;
+      max-width: 100%;
+    }
+  }
+
+  &__form {
+    color: var(--c-dark);
+    background-color: rgba(#fff, 0.9);
+
+    @include rmax($xl) {
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    .request-form__input {
+
+      border-color: #9CAAC0;
+
+    }
+  }
+}

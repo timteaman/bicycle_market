@@ -1,0 +1,99 @@
+@use '../../../../styles/mixins/' as*;
+
+.feedback {
+  padding-block: 80px 60px;
+  @include size('padding-top', 80, 35);
+  @include size('padding-bottom', 60, 35);
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 300px 860px;
+
+    @include rmax($xl) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .content {
+    @include rmax($xl) {
+      margin-inline: auto;
+      text-align: center;
+    }
+  }
+
+  .title {
+    margin-bottom: 35px;
+
+    @include rmax($xl) {
+      &::before {
+        margin-inline: auto;
+      }
+    }
+  }
+
+  .slider-actions {
+    display: flex;
+    gap: 12px;
+
+    @include rmax($xl) {
+      justify-content: center;
+      margin-inline: auto;
+    }
+  }
+
+  .slider-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 2px solid transparent;
+    outline-offset: 0;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, outline-color 0.3s ease-in-out;
+
+    &::before {
+      content: '';
+      width: 10px;
+      height: 20px;
+      mask-image: var(--icon-prev);
+      @include mask-contain;
+      background-color: currentColor;
+    }
+
+    &--next {
+      &::before {
+        transform: scaleX(-1);
+      }
+    }
+
+    &[disabled] {
+      color: var(--c-gray);
+      pointer-events: none;
+    }
+
+    &:focus {
+      outline-color: var(--c-pink);
+      outline-offset: 3px;
+    }
+
+    @include hover {
+      color: var(--c-pink)
+    }
+  }
+
+  .slider {
+    padding-block: 30px;
+    overflow: hidden;
+  }
+
+  .swiper-wrapper {
+    box-sizing: border-box !important;
+  }
+
+  .swiper-slide {
+    box-sizing: border-box !important;
+    width: fit-content !important;
+  }
+}

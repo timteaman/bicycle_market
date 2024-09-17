@@ -1,0 +1,20 @@
+@use '../../../../styles/mixins/' as*;
+
+.discount {
+  @include bg-cover;
+  @include size('padding-block', 80, 35);
+
+  &__inner {
+    display: flex;
+  }
+
+  .content {
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+  }
+
+  .title {
+    margin-bottom: 50px;
+  }
+}

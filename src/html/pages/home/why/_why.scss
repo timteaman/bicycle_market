@@ -1,0 +1,110 @@
+@use '../../../../styles/mixins/' as*;
+
+.why {
+  background-image: url('/src/assets/images/home/why-bike.webp'), url('/src/assets/images/home/why-bg.webp');
+  background-size: 50%, cover;
+  background-position: left top 80px, center;
+  background-repeat: no-repeat;
+
+  @include size('padding-top', 100, 35);
+  @include size('padding-bottom', 250, 35);
+
+  @include rmin(1400) {
+    background-image: url('/src/assets/images/home/why-bike.webp'), url('/src/assets/images/home/why-bg.webp');
+    background-size: 800px, 95% 85%;
+    background-position: left 100px top 80px, right top;
+  }
+
+  @include rmax($xl) {
+    background-image: url('/src/assets/images/home/why-bike.webp'), url('/src/assets/images/home/why-bg.webp');
+    background-size: 35%, cover;
+    background-position: right 60px top 60px, center;
+  }
+
+  @include rmax($sm) {
+    background-image: url('/src/assets/images/home/why-bg.webp');
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: flex-end;
+
+    @include rmax($xl) {
+      justify-content: center;
+    }
+  }
+
+  .content {
+    max-width: 520px;
+
+    @include rmax($xl) {
+      max-width: 100%;
+    }
+  }
+
+  .title {
+    margin-bottom: 50px;
+  }
+}
+
+.advantages-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 40px;
+
+  @include rmax($sm) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.advantage-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    @include mask-contain;
+    background-color: #fff;
+  }
+
+  &.icon-percent {
+    &::before {
+      mask-image: var(--icon-percent);
+    }
+  }
+
+  &.icon-bicycle {
+    &::before {
+      mask-image: var(--icon-bicycle);
+    }
+  }
+
+  &.icon-commenting {
+    &::before {
+      mask-image: var(--icon-commenting);
+    }
+  }
+
+  &.icon-location {
+    &::before {
+      mask-image: var(--icon-location);
+    }
+  }
+}

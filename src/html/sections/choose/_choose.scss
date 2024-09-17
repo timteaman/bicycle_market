@@ -1,0 +1,63 @@
+@use '../../../styles/mixins/' as*;
+
+.choose-bike {
+  @include size('padding-block', 100, 35);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+
+  }
+
+  .content {
+    @include rmax($xl) {
+      margin-inline: auto;
+      text-align: center;
+
+      .btn {
+        margin-inline: auto;
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: 50px;
+
+    @include rmax($xl) {
+      margin-bottom: 24px;
+
+      &::before {
+        margin-inline: auto;
+      }
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  .bikes-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    @include rmax($xl) {
+      margin-inline: auto;
+
+      .bike-card {
+        min-width: 230px;
+        width: 100%;
+      }
+    }
+
+    @include rmax($md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include rmax($xs) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

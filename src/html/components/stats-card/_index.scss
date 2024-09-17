@@ -1,0 +1,36 @@
+.stats-card {
+  text-align: center;
+  padding-inline: 30px;
+
+  &__num {
+    font-family: var(--ff-secondary);
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--c-lightgray);
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+
+    &::after {
+      content: '';
+      display: block;
+      margin-inline: auto;
+      width: 20px;
+      height: 4px;
+      background-color: var(--c-pink);
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--c-white);
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--c-lightgray);
+  }
+}

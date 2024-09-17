@@ -1,0 +1,63 @@
+@use '../../../../styles/mixins/' as*;
+
+.rental {
+  padding-block: 80px 130px;
+  background-color: rgba(56, 28, 117, 1);
+
+  @include size('padding-top', 80, 35);
+  @include size('padding-bottom', 130, 35);
+
+  @include rmin(1400) {
+    background-color: transparent;
+    background-image: linear-gradient(90deg, rgba(56, 28, 117, 1) 94%, rgba(0, 0, 0, 0) 94%, rgba(0, 0, 0, 1) 94%, rgba(255, 255, 255, 0) 94%);
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include rmax($lg) {
+      flex-direction: column;
+      gap: 24px;
+
+    }
+  }
+
+  .content {
+    @include rmax($lg) {
+      text-align: center;
+
+      .btn {
+        margin-inline: auto;
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: 50px;
+
+    @include rmax($lg) {
+      margin-bottom: 24px;
+
+      &::before {
+        margin-inline: auto;
+      }
+    }
+  }
+
+  .text {
+    max-width: 368px;
+    margin-bottom: 25px;
+  }
+}
+
+.rental-price {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  gap: 60px;
+
+  @include rmax($sm) {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,36 @@
+@use '../../../../styles/mixins/' as*;
+
+.stats {
+
+  &__inner {
+    position: relative;
+    padding-block: 70px 80px;
+    padding-inline: 45px;
+
+    &::before {
+      content: '';
+      width: calc(100% + 100px);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -55px;
+      right: -55px;
+      background-color: var(--c-purple);
+      z-index: -1;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include rmax($lg) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    @include rmax($sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

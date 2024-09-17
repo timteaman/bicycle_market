@@ -1,0 +1,44 @@
+@use '../../../styles/mixins/' as*;
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include rmax($sm) {
+    align-items: center;
+    text-align: center;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 36px;
+    @include bg-contain;
+  }
+
+  &.icon-alarm {
+    &::before {
+      background-image: var(--icon-alarm);
+    }
+  }
+
+  &.icon-time {
+    &::before {
+      background-image: var(--icon-time);
+    }
+  }
+
+  &.icon-sandclock {
+    &::before {
+      background-image: var(--icon-sandclock);
+    }
+  }
+
+  &.icon-calendar {
+    &::before {
+      background-image: var(--icon-calendar);
+    }
+  }
+}

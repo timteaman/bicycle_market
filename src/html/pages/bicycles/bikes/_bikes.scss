@@ -1,0 +1,78 @@
+@use '../../../../styles/mixins/' as*;
+
+.bikes {
+  padding-block: 70px 100px;
+  @include size('padding-top', 70, 35);
+  @include size('padding-bottom', 100, 35);
+
+  .tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 45px;
+
+    @include rmax($sm) {
+      justify-content: center;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      border-radius: 3px;
+      border: 1px solid var(--c-light-gray);
+      background-color: (--c-white);
+      outline: 2px solid transparent;
+      outline-offset: 6px;
+      transition: 0.3s ease-in-out;
+
+      &::before {
+        content: '';
+        @include mask-contain;
+        mask-image: var(--icon-arrow-right);
+        width: 16px;
+        height: 16px;
+        background-color: var(--c-dark);
+      }
+
+      &:focus {
+        outline-color: rgba(255, 40, 91, 0.5);
+        outline-offset: 2px;
+      }
+
+      &.active {
+        border-color: var(--c-pink);
+        background-color: rgba(255, 40, 91, 0.1);
+
+        &::before {
+          background-color: #6EC1E4;
+        }
+      }
+
+      @include hover {
+        background-color: rgba(255, 40, 91, 0.1);
+      }
+    }
+  }
+
+  .bikes-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    @include rmax($lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include rmax($md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include rmax($xs) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+}
