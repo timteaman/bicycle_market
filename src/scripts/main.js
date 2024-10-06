@@ -81,3 +81,18 @@ document.addEventListener('click', (e) => {
     handleBurgerClick();
   }
 });
+
+// video pop-up
+
+const videoElement = document.querySelector('.movement__video');
+
+videoElement.onclick = function (e) {
+  e.preventDefault();
+
+  const videoUrl = 'https://www.youtube.com/embed/CNgOmcYCOPw?autoplay=1';
+
+  videoElement.classList.add('is-playing');
+  videoElement.innerHTML = `
+            <iframe width="100%" height="100%" src="${videoUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        `;
+};
